@@ -6,9 +6,10 @@ function Forgotpassword() {
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
       console.log(email)
-      axios.post('http://localhost:5000/send-otp',
+      axios.post('http://localhost:5000/forgot-password',
           {
               email: email,
           })
@@ -16,7 +17,7 @@ function Forgotpassword() {
               console.log(res.data)
               if (res.data.code === 200)
                {
-                  navigate('/otp')
+                  navigate('/login')
               } else {
                   alert('Email / Server Error.')
               }

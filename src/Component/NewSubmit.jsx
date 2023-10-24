@@ -5,14 +5,14 @@ import { useNavigate } from 'react-router-dom'
 function NewSubmit() {
     
     const navigate = useNavigate()
-    const [otp, setOtp] = useState('')
+   // const [otp, setOtp] = useState('')
     const [password, setPassword] = useState('')
 
     const handleSubmit = ()=>{
-        console.log(otp, password)
-        axios.post('http://localhost:5000/submit-otp',
+        console.log( password)
+        axios.post('http://localhost:5000/forgot-password',
             {
-                otp: otp,
+                
                 password: password,
             })
             .then(res => {
@@ -21,7 +21,7 @@ function NewSubmit() {
                     navigate('/signIn')
                     alert('Password Updated.')
                 } else {
-                    alert('server err / wrong OTP')
+                    alert('server err ')
                 }
             }).catch(err => {
                 console.log(err)
@@ -32,16 +32,7 @@ function NewSubmit() {
     <div> 
          <h1 className='center'> New Password</h1>
         <div className='outercard'>
-    OTP: <input
-    style={{ marginBottom: '15px' }}
-    onChange={(e)=>{
-        setOtp(e.target.value);
-    }}
-    value={otp}
-     className='inputs' 
-     type="text"></input> <br/>
-
-      New Password: <input
+         New Password: <input
        style={{ marginBottom: '20px' }}
        onChange={(e)=>{
         setPassword(e.target.value);

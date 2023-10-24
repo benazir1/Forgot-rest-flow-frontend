@@ -9,8 +9,10 @@ function SignIn() {
   const [email,setEmail]=useState('');
   const [password,setPassword] =useState('');
   const navigate = useNavigate();
+ // axios.defaults.withCredentials=true;
 
-  const handleSubmit = () =>{
+  const handleSubmit = (e) =>{
+    e.preventDefault();
       console.log(email,password);
       axios.post('http://localhost:5000/signin',
       {
@@ -57,7 +59,7 @@ function SignIn() {
    onClick={handleSubmit}
    className='btns'>submit</button>
     <Link style = {{textAlign:'center',display : 'block',marginTop :'5px',}} to={'/signup'}>SIGN UP</Link>
-    <Link style = {{textAlign:'center',display : 'block',marginTop :'15px'}} to={'/forget-pass'}>  Forgot password</Link>
+    <Link style = {{textAlign:'center',display : 'block',marginTop :'15px'}} to={'/forgot-password'}>  Forgot password</Link>
     </div>
    
 </div>

@@ -15,7 +15,7 @@ function Signup() {
             password:password
         })
         .then(res=>{
-                       
+              alert("created");         
              navigate('/signIn')
         
         }).catch(err =>{

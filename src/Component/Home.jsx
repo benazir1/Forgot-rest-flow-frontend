@@ -12,6 +12,7 @@ function Home() {
 
   }, [])
   return (
+    <>
     <div className='card'>
     <div>Home</div>
     <div>
@@ -21,7 +22,12 @@ function Home() {
         navigate('/signIN');
        }}>Logout</button>
     </div>
+    
     </div>
+    <div>
+    <h1>Welcome to our site</h1>
+    </div>
+    </>
   )
 }
 
