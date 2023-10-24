@@ -39,7 +39,7 @@ function Forgotpassword() {
    
    <button 
    onClick={handleSubmit}
-   className='btns'>SEND OTP</button>
+   className='btns'>SEND MAIL</button>
    </div>
    </div>
   )
