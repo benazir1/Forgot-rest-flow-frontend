@@ -9,7 +9,7 @@ const Resetpassword = () => {
      const{id,token} =useParams();
      const handleSubmit = ()=>{
         console.log( password)
-        axios.post(`http://localhost:5000/reset-password/${id}/${token}`,
+        axios.post(`https://pwd-backend.onrender.com/reset-password/${id}/${token}`,
             {
                 
                 password: password,

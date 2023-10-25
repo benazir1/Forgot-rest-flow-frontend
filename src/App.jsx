@@ -5,7 +5,8 @@ import SignIn from "./Component/SignIn"
 import Home from "./Component/Home"
 import Forgotpassword from "./Component/Forgotpassword"
 import Resetpassword from "./Component/Resetpassword"
-
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 function App() {
   
 
@@ -22,6 +23,7 @@ function App() {
        
    
     </Router>
+    <ToastContainer theme="dark"/>
       
     </div>
   )

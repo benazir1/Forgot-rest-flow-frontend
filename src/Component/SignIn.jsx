@@ -3,7 +3,8 @@ import React, { useState } from 'react'
 import "../App.css";
 import  axios from "axios"
 import {Link,useNavigate} from 'react-router-dom'
-
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 function SignIn() {
   const [email,setEmail]=useState('');
@@ -14,7 +15,7 @@ function SignIn() {
   const handleSubmit = (e) =>{
     e.preventDefault();
       console.log(email,password);
-      axios.post('http://localhost:5000/signin',
+      axios.post('https://pwd-backend.onrender.com/signin',
       {
           email:email,
           password:password
@@ -28,7 +29,7 @@ function SignIn() {
             alert('password is wrong')
           }
           if (res.data) {
-            // move to home
+            toast.success('login success');
             navigate('/')
             localStorage.setItem('TOKEN', res.data.token)
             localStorage.setItem('EMAIL', res.data.email)
@@ -61,7 +62,7 @@ function SignIn() {
     <Link style = {{textAlign:'center',display : 'block',marginTop :'5px',}} to={'/signup'}>SIGN UP</Link>
     <Link style = {{textAlign:'center',display : 'block',marginTop :'15px'}} to={'/forgot-password'}>  Forgot password</Link>
     </div>
-   
+   <ToastContainer/>
 </div>
   )
 }

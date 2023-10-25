@@ -9,7 +9,7 @@ function Forgotpassword() {
   const handleSubmit = (e) => {
     e.preventDefault()
       console.log(email)
-      axios.post('http://localhost:5000/forgot-password',
+      axios.post('https://pwd-backend.onrender.com/forgot-password',
           {
               email: email,
           })

@@ -9,7 +9,7 @@ function Signup() {
    const navigate = useNavigate();
     const handleSubmit = () =>{
         console.log(email,password);
-        axios.post('http://localhost:5000/signup',
+        axios.post('https://pwd-backend.onrender.com/signup',
         {
             email:email,
             password:password
